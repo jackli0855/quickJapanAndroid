@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/vendor/jquery.mobile-1.4.3.min.css" />
+    <script src="js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="js/vendor/jquery.mobile-1.4.3.min.js"></script>
+    <script src="js/page4.json"></script>
+</head>
+
+<body>
+<div data-role="page" >
+    <div data-role="header" data-position="fixed">
+        <a href="index.html" data-role="button" data-icon="home" data-rel="back">首页</a>
+        <h1>敬語教材</h1>
+    </div><!-- /header -->
+    <div role="main" class="ui-content">
+        <ul data-role="listview" id="mylist">
+        </ul>
+    </div><!-- /content -->
+    <!-- <div data-role="footer">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="grid" data-theme="a">A</a></li>
+                <li><a href="#" data-icon="star" data-theme="b">B</a></li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(titles).each(function(i,title){
+   this.src = "test" + i + ".jpg";
+   var str = "<li class='ui-first-child ui-last-child'>";
+   str += '<a href="sub/app4/' +i+ '.html" data-transition="slide" class="ui-btn ui-btn-icon-right ui-icon-carat-r">';
+   str += title;           
+   str += "</a>";
+   str += "</li>";
+   $("#mylist").append(str);
+ });
+});
+</script>
+</body>
+</html>    

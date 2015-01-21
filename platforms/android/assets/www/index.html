@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>QuickJap</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />    
+    <meta charset="utf-8"/>
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="stylesheet" href="css/vendor/jquery.mobile-1.4.3.min.css" />
+    <script src="js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="js/vendor/jquery.mobile-1.4.3.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $( "[data-role='navbar']" ).navbar();
+            $( "[data-role='header'], [data-role='footer']" ).toolbar();
+        });
+        // Update the contents of the toolbars
+        $( document ).on( "pagecontainershow", function() {
+            // Each of the four pages in this demo has a data-title attribute
+            // which value is equal to the text of the nav button
+            // For example, on first page: <div data-role="page" data-title="Info">
+            var current = $( ".ui-page-active" ).jqmData( "title" );
+            // Change the heading
+            $( "[data-role='header'] h1" ).text( current );
+            // Remove active class from nav buttons
+            $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
+            // Add active class to current nav button
+            $( "[data-role='navbar'] a" ).each(function() {
+                if ( $( this ).text() === current ) {
+                    $( this ).addClass( "ui-btn-active" );
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>    
+    <!-- Start of first page -->
+    <div data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>音速日語文法</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3></h3>
+            <ul data-role="listview">
+                <li><a href="sub1.html" data-transition="slide" data-ajax="false">基礎文法<span class="ui-li-count">60</span></a></li>
+                <li><a href="sub2.html" data-transition="slide" data-ajax="false">進階文法<span class="ui-li-count">38</span></a></li>
+                <li><a href="sub3.html" data-transition="slide" data-ajax="false">番外篇─文法整理<span class="ui-li-count">8</span></a></li>
+                <li><a href="sub4.html"  data-transition="slide" data-ajax="false">敬語教材 <span class="ui-li-count">10</span></a></li>
+            </ul>
+        </div><!-- /content -->  
+        <div data-role="footer" data-position="fixed">
+            <h4>Page Footer</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+</body>
+</html>
