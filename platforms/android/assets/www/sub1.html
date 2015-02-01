@@ -52,7 +52,7 @@ $(document).ready(function(){
   $(titles).each(function(i,title){
    this.src = "test" + i + ".jpg";
    var str = "<li class='ui-first-child ui-last-child'>";
-   str += '<a href="sub/app1/' +(60-i)+ '.html" data-transition="slide" class="ui-btn ui-btn-icon-right ui-icon-carat-r">';
+   str += '<a href="sub/app1/' +(i + 1)+ '.html" data-transition="slide" class="ui-btn ui-btn-icon-right ui-icon-carat-r">';
    str += title;           
    str += "</a>";
    str += "</li>";
